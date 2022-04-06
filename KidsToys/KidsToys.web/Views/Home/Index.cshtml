@@ -14,7 +14,10 @@
                     <h1>Elementos Destacados</h1>
                 </div>
             </div>
-            <div class="col-md-12">
+            @foreach (var producto in Model)
+            {
+
+                <div class="col-md-12">
                 <div class="owl-carousel owl-theme">
                     <a href="single-product.html">
                         <div class="featured-item">
@@ -81,6 +84,7 @@
                     </a>
                 </div>
             </div>
+            }
         </div>
     </div>
 </div>
