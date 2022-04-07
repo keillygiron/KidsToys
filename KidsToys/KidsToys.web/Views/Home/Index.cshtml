@@ -14,116 +14,30 @@
                     <h1>Elementos Destacados</h1>
                 </div>
             </div>
-            @foreach (var producto in Model)
-            {
-
+         
                 <div class="col-md-12">
                 <div class="owl-carousel owl-theme">
+                    @foreach (var producto in Model
+                        .Where(r=> r.Categoria.Descripcion =="Juguetes")
+                        .Take(4)
+                        .OrderBy(r => Guid.NewGuid())
+                        )
+                    {
+
                     <a href="single-product.html">
                         <div class="featured-item">
-                            <img src="~/assets/images/item_01.jpg" alt="Item 1">
-                            <h4>Bloques de madera ABC/123</h4>
-                            <h6>Lps.590</h6>
+                            <img src="@(ViewBag.adminWebsiteUrl + producto.UrlImagen)" alt="">
+                            
+                            <h4>@producto.Descripcion</h4>
+                            <h6>L @producto.Precio</h6>
                         </div>
                     </a>
-                    <a href="single-product.html">
-                        <div class="featured-item">
-                            <img src="~/assets/images/item_02.jpg" alt="Item 2">
-                            <h4>Juego de construcción en una caja</h4>
-                            <h6>LPS.790</h6>
-                        </div>
-                    </a>
-                    <a href="single-product.html">
-                        <div class="featured-item">
-                            <img src="~/assets/images/item_03.jpg" alt="Item 3">
-                            <h4>Establos y animales de anidamiento y clasificación</h4>
-                            <h6>LPS.865</h6>
-                        </div>
-                    </a>
-                    <a href="single-product.html">
-                        <div class="featured-item">
-                            <img src="~/assets/images/item-04.jpg" alt="Item 4">
-                            <h4>Puzzle de suelo Dinosaur Dawn - 24 piezas</h4>
-                            <h6>LPS.790</h6>
-                        </div>
-                    </a>
-                    <a href="single-product.html">
-                        <div class="featured-item">
-                            <img src="~/assets/images/item-05.jpg" alt="Item 5">
-                            <h4>Set De Limpieza</h4>
-                            <h6>LPS.1090</h6>
-                        </div>
-                    </a>
-                    <a href="single-product.html">
-                        <div class="featured-item">
-                            <img src="~/assets/images/item_06.jpg" alt="Item 6">
-                            <h4>Bloc de actividades de habilidades de tijera</h4>
-                            <h6>LPS.290</h6>
-                        </div>
-                    </a>
-                    <a href="single-product.html">
-                        <div class="featured-item">
-                            <img src="~/assets/images/item_07.jpg" alt="Item 7">
-                            <h4>T-Rex - Peluche gigante</h4>
-                            <h6>LPS.2,190</h6>
-                        </div>
-                    </a>
-                    <a href="single-product.html">
-                        <div class="featured-item">
-                            <img src="~/assets/images/item_08.jpg" alt="Item 8">
-                            <h4>Animal de peluche gigante de jirafa</h4>
-                            <h6>LPS.1,990</h6>
-                        </div>
-                    </a>
-                    <a href="single-product.html">
-                        <div class="featured-item">
-                            <img src="~/assets/images/item_09.jpg" alt="Item 9">
-                            <h4>Cocina del Chef - Nube</h4>
-                            <h6>LPS.5,000</h6>
-                        </div>
-                    </a>
+                    }
+                   
+                   </div>
                 </div>
             </div>
-            }
         </div>
     </div>
-</div>
+
 <!-- Featred Ends Here -->
-<!-- Subscribe Form Starts Here -->
-<div class="subscribe-form">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-heading">
-                    <div class="line-dec"></div>
-                    <h1>Suscribete a Kids Toys Ahora!</h1>
-                </div>
-            </div>
-            <div class="col-md-8 offset-md-2">
-                <div class="main-content">
-                    <p>Si te suscribes recibiras novedades sobre nuestros productos y estaras al tanto de nuestros descuentos</p>
-                    <div class="container">
-                        <form id="subscribe" action="" method="get">
-                            <div class="row">
-                                <div class="col-md-7">
-                                    <fieldset>
-                                        <input name="email" type="text" class="form-control" id="email"
-                                               onfocus="if(this.value == 'Your Email...') { this.value = ''; }"
-                                               onBlur="if(this.value == '') { this.value = 'Your Email...';}"
-                                               value="Your Email..." required="">
-                                    </fieldset>
-                                </div>
-                                <div class="col-md-5">
-                                    <fieldset>
-                                        <button type="submit" id="form-submit" class="button">Suscribete Ahora!</button>
-                                    </fieldset>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Subscribe Form Ends Here -->

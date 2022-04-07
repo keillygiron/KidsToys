@@ -19,7 +19,7 @@ namespace KidsToys.BL
         [Display(Name = "Descripción")]
         [Required(ErrorMessage = "Ingrese la descripción")]
         [MinLength(3, ErrorMessage = "Ingrese minimo 3 caracteres")]
-        [MaxLength(20, ErrorMessage = "Ingrese un maximo de 20 caracteres")]
+        [MaxLength(100, ErrorMessage = "Ingrese un maximo de 100 caracteres")]
         public string Descripcion { get; set; }
 
         [Required(ErrorMessage = "Ingrese el precio")]
