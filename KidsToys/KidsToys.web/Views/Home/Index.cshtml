@@ -1,43 +1,31 @@
 ﻿@model List<KidsToys.BL.Producto>
-
 @{
     ViewBag.Title = "Inicio";
 }
+<div class="col-md-12">
+    <div class="section-heading">
+        <div class="line-dec"></div>
+        <div class="container">
+            <div class="heading"><h3>Elementos destacados</h3></div>
+            <div class="row">
 
- <!-- Featured Starts Here -->
-<div class="featured-items">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-heading">
-                    <div class="line-dec"></div>
-                    <h1>Elementos Destacados</h1>
-                </div>
-            </div>
-         
-                <div class="col-md-12">
-                <div class="owl-carousel owl-theme">
-                    @foreach (var producto in Model
-                        .Where(r=> r.Categoria.Descripcion =="Juguetes")
-                        .Take(4)
-                        .OrderBy(r => Guid.NewGuid())
-                        )
-                    {
-
-                    <a href="single-product.html">
-                        <div class="featured-item">
+                @foreach (var producto in Model)
+            {
+                    <div class="col-md-12">
+                        <div class="owl-carousel owl-theme">
+                            <div class="ïmg-200x mlr-auto pos-relative"></div>
                             <img src="@(ViewBag.adminWebsiteUrl + producto.UrlImagen)" alt="">
-                            
-                            <h4>@producto.Descripcion</h4>
-                            <h6>L @producto.Precio</h6>
                         </div>
-                    </a>
-                    }
-                   
-                   </div>
-                </div>
-            </div>
+                    </div>
+
+
+                    <h5 class="mt-20">@producto.Descripcion</h5>
+                            <h4 class="mt-5 color-primary float-right"><b>L @producto.Precio</b></h4>
+
+
+
+                }
+            </div><!-- row -->
+        </div><!-- container -->
         </div>
     </div>
-
-<!-- Featred Ends Here -->
